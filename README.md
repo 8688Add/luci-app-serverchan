@@ -23,12 +23,12 @@
 
 #### 已知问题
 - 直接关闭接口时，该接口的离线设备会忽略检测
-- luci 点击保存时，调用`/etc/init.d/`中的脚本无法正确获取运行状态，导致重复加载（但不会造成重复进程）
+- 仅检测接口选项中，部分无线设备在 /proc/net/arp 表中显示为 br-lan ，而非 wlan1 ，导致判断失败
+- luci 点击保存时，调用`/etc/init.d/`中的脚本无法正确获取运行状态，导致重复加载（但不会造成重复进程），原版19.07有可能需要反复点击才会启动，我网页语言非常烂，有时候再试试吧
 
 #### 常见问题
-- 有时我可能误上传无权限的 /usr/bin/serverchan/serverchan 文件，表现为无法启动，执行`/usr/bin/serverchan/serverchan`后提示无权限 -ash: /usr/bin/serverchan/serverchan: Permission denied ，你可以手动修改权限并提醒我
 - 脚本使用 `#!/bin/sh` 解析，部分系统，如潘多拉只有 bash 没有 sh ，表现为无法启动，执行`/usr/bin/serverchan/serverchan`后提示 /etc/rc.common: line 152: /usr/bin/serverchan/serverchan: not found ，请将脚本开头 `#!/bin/sh` 改为 `#!/bin/bash`
-- 如果luci界面不显示 serverchan 的配置，或只显示一个是否启用serverchan的复选框，可能是跨了很多个版本更新，或者配置文件出错，请手动将仓库里 /root/ect/config/serverchan 复制到设备的 /etc/config/ 目录下，覆盖掉之前的文件
+- 如果luci界面不显示 serverchan 的配置，或只显示一个是否启用serverchan的复选框，或系统日志显示 uci：entry not found ，可能是跨了很多个版本更新，或者配置文件出错，请手动将仓库里 /root/ect/config/serverchan 复制到设备的 /etc/config/ 目录下，覆盖掉之前的文件
 
 #### ps
 
@@ -39,6 +39,6 @@
 - 三言两句恕我无能为力
 - 武汉加油
 
-![image](https://github.com/tty228/Python-100-Days/blob/master/res/WeChat%E6%88%AA%E5%9C%96_20200111190113.png)
-![image](https://github.com/tty228/Python-100-Days/blob/master/res/WeChat%E6%88%AA%E5%9C%96_20200111190912.png)
+![image](https://github.com/tty228/Python-100-Days/blob/master/res/111.png)
+![image](https://github.com/tty228/Python-100-Days/blob/master/res/222.png)
 ![image](https://github.com/tty228/Python-100-Days/blob/master/res/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20200212003643.png)
